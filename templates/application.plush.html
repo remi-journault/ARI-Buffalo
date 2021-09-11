@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <title>Buffalo - Project</title>
+    <%= stylesheetTag("application.css") %>
+    <meta name="csrf-param" content="authenticity_token" />
+    <meta name="csrf-token" content="<%= authenticity_token %>" />
+    <link rel="icon" href="<%= assetPath("images/favicon.ico") %>">
+  </head>
+  <body>
+    <div class="container">
+      <%= partial("flash.html") %>
+      <!-- Header of all the app -->
+      <header>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-1 col-sm-2 col-xs-2 logo">
+              <a href="<%= rootPath() %>">
+                <img src="<%= rootPath() %>assets/images/pizza.svg" alt=""
+              /></a>
+            </div>
+            <div class="col-md-9 col-sm-9 col-xs-10 titles">
+              <h1><%= t("welcome_greeting") %></h1>
+              <h2>
+                <a href="https://github.com/gobuffalo/buffalo"
+                  ><i class="fab fa-github" aria-hidden="true"></i>
+                  https://github.com/gobuffalo/buffalo</a
+                >
+              </h2>
+              <h2 class="documentation">
+                <a href="http://gobuffalo.io/"
+                  ><i class="fa fa-book" aria-hidden="true"></i>
+                  Documentation</a
+                >
+              </h2>
+            </div>
+            <a href="<%= profilePath() %>" role="button" class="btn btn-danger">
+              <img
+                src="<%= rootPath() %>assets/images/user.png"
+                height="20px"
+                width="20px"
+                alt=""
+              />
+            </a>
+            <a href="<%= cartPath() %>" role="button" class="btn btn-danger">
+              <img
+                src="<%= rootPath() %>assets/images/shopping-cart.png"
+                height="20px"
+                width="20px"
+                alt=""
+              />
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <%= yield %>
+      <div class="foot">
+        <span> Powered by <a href="http://gobuffalo.io/">gobuffalo.io</a></span>
+      </div>
+    </div>
+
+    <%= javascriptTag("application.js") %>
+  </body>
+</html>

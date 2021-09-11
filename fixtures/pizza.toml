@@ -1,0 +1,17 @@
+[[scenario]]
+name = "lots of pizzas"
+
+  [[scenario.table]]
+    name = "pizzas"
+
+    [[scenario.table.row]]
+      Label = "pizza #1"
+      Price = 1
+
+    [[scenario.table.row]]
+      Label = "pizza #2"
+      Price = 2
+
+    [[scenario.table.row]]
+      Label = "pizza #3"
+      Price = 3

@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="subtitle">
+      <div class="container">
+        <h3>Our pizzas</h3>
+      </div>
+    </div>
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr text-align="left">
+            <th class="centered">Name</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= for (pizza) in pizzas { %>
+          <tr>
+            <td class="centered"><%= pizza.Label %></td>
+            <td ><%= pizza.Price %></td>
+          </tr>
+          <% } %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
